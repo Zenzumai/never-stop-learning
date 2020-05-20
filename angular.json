@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "never-stop-learning"
+    }
+  },
+  "defaultProject": "never-stop-learning",
+  "cli": {
+    "analytics": false
+  }
 }
