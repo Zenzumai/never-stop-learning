@@ -1,0 +1,15 @@
+<div title="Build your home office">
+    <p>
+        Here, you'll find everything you need to build a good looking and functional home office.
+    </p>
+
+    <h3>
+        trainings
+    </h3>
+
+    <div class="trainings-list">
+        <div *ngFor="let training of trainings" class="trainings-list__item">
+            {{ training | json }}
+        </div>
+    </div>
+</div>

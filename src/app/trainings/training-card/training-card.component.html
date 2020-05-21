@@ -1,0 +1,31 @@
+<div class="card" [ngClass]="{'horizontal': type === 'horizontal'}">
+    <div class="card-image">
+        <img [src]="training.image" />
+        <span class="card-title" *ngIf="type !== 'horizontal'">{{ training.name }}</span>
+    </div>
+    <div [ngClass]="{'card-stacked': type === 'horizontal'}">
+        <div class="card-content">
+            <p class="training-card__description">
+                {{ training.description }}
+            </p>
+            <p class="training-card__price">
+                {{ training.price }} Euros
+            </p>
+        </div>
+        <div class="card-action">
+            <a [routerLink]="['/trainings/' + training.id]" *ngIf="!showBuyButton">
+                View training
+            </a>
+            <button class="snipcart-add-item waves-effect waves-light btn-large btn"
+                *ngIf="showBuyButton"
+                data-item-url="https://scully-snipcart-api.netlify.com/trainings.json"
+                [attr.data-item-price]="training.price"
+                [attr.data-item-image]="training.image"
+                [attr.data-item-name]="training.name"
+                [attr.data-item-description]="training.description"
+                [attr.data-item-id]="training.id">
+                Add to cart
+            </button>
+        </div>
+    </div>
+</div>
