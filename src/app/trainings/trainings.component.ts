@@ -18,7 +18,7 @@ export class TrainingsComponent implements OnInit {
     this.trainings$ = this.trainingsService.getTrainings();
     this.trainings$.subscribe(results => {
       this.trainings.push(results);
-    })
+    });
     console.log(this.trainings);
   }
 
